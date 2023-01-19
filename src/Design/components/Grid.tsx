@@ -45,7 +45,31 @@ export const Grid = styled("div", {
         gridTemplateRows: "repeat(7, 1fr)",
       },
     },
-
+    alignX: {
+      between: {
+        justifyContent: "space-between",
+      },
+      start: {
+        justifyContent: "flex-start",
+      },
+      end: {
+        justifyContent: "flex-end",
+      },
+      center: {
+        justifyContent: "center",
+      },
+    },
+    alignY: {
+      start: {
+        alignItems: "flex-start",
+      },
+      end: {
+        alignItems: "flex-end",
+      },
+      center: {
+        alignItems: "center",
+      },
+    },
     gap: {
       1: {
         gap: "10px",

@@ -5,6 +5,8 @@ import { NormalWidget } from "./Design/components/Widget";
 import { Text } from "./Design/components/Text";
 import { Grid } from "./Design/components/Grid";
 import { Box } from "./Design/components/Box";
+import { Flex } from "./Design/components/Flex";
+import { Input } from "./Design/components/Input";
 
 interface ThemeMap {
   light: string;
@@ -18,16 +20,6 @@ const themeMap: ThemeMap = {
 
 const { styled } = stitches;
 
-const Container = styled("div", {
-  alignItems: "center",
-  backgroundColor: "$primaryColor",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  minHeight: "100vh",
-  width: "100vw",
-});
-
 function App() {
   GlobalStyle();
   const [theme, setTheme] = useState("light");
@@ -38,14 +30,42 @@ function App() {
 
   return (
     <Grid className={themeMap[theme]} columns={2} css={{ height: "100vh" }}>
-      <Box css={{ height: "100%" }}>
+      <Flex color="primary" direction="column" gap="2" css={{ height: "100%" }}>
+        <Input />
         <Text color="primary" size="big">
-          Hello World
+          Sunny or not
         </Text>
-      </Box>
-      <Box>
-        <button onClick={() => setTheme("dark")}>Dark</button>
-      </Box>
+        <Text color="primary" size="big">
+          degs
+        </Text>
+        <Text color="primary" size="big">
+          day and time
+        </Text>
+        <Text color="primary" size="big">
+          divider
+        </Text>
+        <Text color="primary" size="big">
+          mostly cloudy
+        </Text>
+        <Text color="primary" size="big">
+          Rain
+        </Text>
+        <Text color="primary" size="big">
+          Location
+        </Text>
+      </Flex>
+      <Flex alignX="between" color="secondary" css={{ height: "5%" }}>
+        <Flex>
+          <Text>Today</Text>
+          <Text>Week</Text>
+        </Flex>
+        <Flex>
+          <button onClick={() => setTheme("dark")}>Dark</button>
+          <Text>deg</Text>
+          <Text>fahr</Text>
+          <Text>Profile pic</Text>
+        </Flex>
+      </Flex>
       {/* <NormalWidget /> */}
     </Grid>
   );
