@@ -1,6 +1,7 @@
 export const neutral = {
   100: "#ffffff",
   200: "#f6f6f8",
+  300: "#cacaca",
 };
 
 export const black = {

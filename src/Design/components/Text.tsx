@@ -15,6 +15,9 @@ export const Text = styled("div", {
       big: {
         fontSize: `${typeScale.header1}`,
       },
+      xlbig: {
+        fontSize: "3rem",
+      },
     },
     color: {
       primary: {

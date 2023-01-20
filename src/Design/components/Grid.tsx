@@ -7,7 +7,7 @@ export const Grid = styled("div", {
   variants: {
     columns: {
       2: {
-        gridTemplateColumns: "1fr 2fr",
+        gridTemplateColumns: "1fr 4fr",
       },
       3: {
         gridTemplateColumns: "repeat(3, 1fr)",
@@ -27,7 +27,7 @@ export const Grid = styled("div", {
     },
     rows: {
       2: {
-        gridTemplateRows: "1fr 2fr",
+        gridTemplateRows: "1fr 1fr",
       },
       3: {
         gridTemplateRows: "repeat(3, 1fr)",

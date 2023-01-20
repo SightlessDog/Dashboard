@@ -8,7 +8,8 @@ export const stitches = createStitches({
       primaryColor: neutral[100],
       secondaryColor: neutral[200],
       primaryTextColor: black[200],
-      secondaryTextColor: black[100],
+      secondaryTextColor: neutral[300],
+      dividerColor: neutral[300],
       indicatorColor: blue[200],
     },
     fonts: {
@@ -31,6 +32,7 @@ export const darkTheme = createTheme("dark", {
     secondaryColor: black[100],
     primaryTextColor: neutral[100],
     secondaryTextColor: neutral[200],
+    dividerColor: neutral[100],
     indicatorColor: blue[200],
   },
   fonts: {

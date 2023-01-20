@@ -37,6 +37,9 @@ export const Flex = styled(Box, {
       center: {
         alignItems: "center",
       },
+      baseline: {
+        alignItems: "baseline",
+      },
     },
     gap: {
       1: {

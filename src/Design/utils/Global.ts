@@ -11,7 +11,7 @@ export const GlobalStyle = globalCss({
   },
   body: {
     margin: "0",
-    padding: "2% 2%",
+    padding: "0",
     fontFamily: `${primaryFont}`,
   },
   main: {
