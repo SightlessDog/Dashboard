@@ -2,13 +2,15 @@ import * as React from "react";
 import { styled } from "@stitches/react";
 import { Flex } from "./Flex";
 import { Text } from "./Text";
-import puddle from "../assets/animations/puddle.gif";
-import puddleStill from "../assets/images/puddle.png";
-import Gif from "./Gif";
+import { getTheDay } from "../../utils";
+import { AnimationOfDay } from "../../Components/AnimationDay";
 
 interface WidgetProps {
-  title?: string;
   width?: string;
+  maxTemp: string;
+  minTemp: string;
+  state: string;
+  day: Date;
 }
 
 const WidgetBox = styled(Flex, {
@@ -18,7 +20,13 @@ const WidgetBox = styled(Flex, {
   padding: "20px 40px",
 });
 
-export const Widget: React.FC<WidgetProps> = ({ title = "Widget", width }) => {
+export const Widget: React.FC<WidgetProps> = ({
+  width,
+  maxTemp,
+  minTemp,
+  state,
+  day,
+}) => {
   return (
     <WidgetBox
       alignX="center"
@@ -27,11 +35,11 @@ export const Widget: React.FC<WidgetProps> = ({ title = "Widget", width }) => {
       gap="1"
       css={{ width: width }}
     >
-      <Text>{title}</Text>
-      <Gif still={puddleStill} animated={puddle} width="50px" height="50px" />
+      <Text>{getTheDay(new Date(day).getDay())}</Text>
+      <AnimationOfDay state={state} />
       <Flex direction="row" gap="1">
-        <Text>15°</Text>
-        <Text color="secondary">3°</Text>
+        <Text>{maxTemp}°</Text>
+        <Text color="secondary">{minTemp}°</Text>
       </Flex>
     </WidgetBox>
   );

@@ -3,7 +3,8 @@ import * as React from "react";
 
 export const Grid = styled("div", {
   display: "grid",
-  gridTemplateRows: "1fr",
+  gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+  gridTemplateRows: "repeat(auto-fit, minmax(140px, 1fr))",
   variants: {
     columns: {
       2: {
@@ -43,6 +44,12 @@ export const Grid = styled("div", {
       },
       7: {
         gridTemplateRows: "repeat(7, 1fr)",
+      },
+    },
+    size: {
+      big: {
+        gridTemplateColumns: "repeat(auto-fit, minmax(30%, 1fr))",
+        gridTemplateRows: "repeat(auto-fit, minmax(50%, 1fr))",
       },
     },
     alignX: {
