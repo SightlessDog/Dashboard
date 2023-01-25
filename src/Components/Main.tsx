@@ -2,8 +2,6 @@ import * as React from "react";
 import { Box } from "../Design/components/Box";
 import { Text } from "../Design/components/Text";
 import { Flex } from "../Design/components/Flex";
-import { CustomLink, Link } from "../Design/components/Link";
-import { Button } from "../Design/components/Button";
 import { Grid } from "../Design/components/Grid";
 import { Widget } from "../Design/components/Widget";
 import { UVIndex } from "../custom/UVIndex";
@@ -94,7 +92,7 @@ export const Main = ({
             <Text color="primary" css={{ fontWeight: "bold" }} size="big">
               Today's Highlights
             </Text>
-            <Grid gap="1">
+            <Grid gap="1" alignX="center">
               <UVIndex index={forecastData[0].day.uv} />
               <WindStatus windKph={windKph} direction={windDirection} />
               <Sunrise

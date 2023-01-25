@@ -7,6 +7,7 @@ export const neutral = {
 export const black = {
   100: "#1b1a1d",
   200: "#101014",
+  300: "rgba(70, 11, 72, 0.7)",
 };
 
 export const blue = {

@@ -18,12 +18,16 @@ export const Sunrise = ({ sunrise, sunset }) => {
     <Box alignX="between">
       <Text color="secondary">Sunrise & Sunset</Text>
       <Flex alignY="center" gap="1">
-        <SunriseIcon width="30px" height="30px" />
-        <Text css={{ fontWeight: "500" }}>{sunrise}</Text>
+        <SunriseIcon width="50px" height="50px" />
+        <Text color="primary" css={{ fontWeight: "500" }}>
+          {sunrise}
+        </Text>
       </Flex>
       <Flex alignY="center" gap="1">
-        <SunsetIcon width="30px" height="30px" />
-        <Text css={{ fontWeight: "500" }}>{sunset}</Text>
+        <SunsetIcon width="50px" height="50px" />
+        <Text color="primary" css={{ fontWeight: "500" }}>
+          {sunset}
+        </Text>
       </Flex>
     </Box>
   );

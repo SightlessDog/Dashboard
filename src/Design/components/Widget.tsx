@@ -20,7 +20,7 @@ const WidgetBox = styled(Flex, {
   backgroundColor: "$primaryColor",
   borderRadius: "10px",
   fontFamily: "$primaryFont",
-  padding: "20px 40px",
+  padding: "20px 30px",
 });
 
 export const Widget: React.FC<WidgetProps> = ({
@@ -41,10 +41,10 @@ export const Widget: React.FC<WidgetProps> = ({
       gap="1"
       css={{ width: width }}
     >
-      <Text>{getTheDay(new Date(day).getDay())}</Text>
+      <Text color="primary">{getTheDay(new Date(day).getDay())}</Text>
       <AnimationOfDay width="50px" height="50px" state={state} />
       <Flex direction="row" gap="1">
-        <Text>{unit == "C" ? maxTemp : maxTempF}°</Text>
+        <Text color="primary">{unit == "C" ? maxTemp : maxTempF}°</Text>
         <Text color="secondary">{unit == "C" ? minTemp : minTempF}°</Text>
       </Flex>
     </WidgetBox>

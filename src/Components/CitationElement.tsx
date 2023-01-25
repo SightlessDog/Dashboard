@@ -12,7 +12,7 @@ const Container = styled(Flex, {
 
 export const Citation = ({ citation }) => {
   return (
-    <Container css={{ height: "auto", padding: "10px" }} gap="2">
+    <Container css={{ height: "auto", padding: "20px" }} gap="2">
       <Text color={"primary"} size="big" css={{ fontWeight: "bold" }}>
         Quote of the day
       </Text>

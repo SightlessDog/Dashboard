@@ -4,13 +4,13 @@ import { Text } from "../Design/components/Text";
 import { Input } from "../Design/components/Input";
 import Gif from "../Design/components/Gif";
 import { Box } from "../Design/components/Box";
-import puddle from "../Design/assets/animations/puddle.gif";
-import puddleStill from "../Design/assets/images/puddle.png";
 import { Context } from "../App";
 import { ImageEl } from "../Design/components/ImageEl";
 import spaceSquad from "../Design/assets/images/spacesquad.jpg";
 import spaceSquadbg from "../Design/assets/images/BackgroundCoverColor.png";
 import spaceSquadbgNighty from "../Design/assets/images/BackgroundCoverColorNighty.png";
+import puddle from "../Design/assets/animations/puddle.gif";
+import puddleStill from "../Design/assets/images/puddle.png";
 import { AnimationOfDay } from "./AnimationDay";
 import { getTheDay } from "../utils";
 import { Nav } from "./Nav";
@@ -119,9 +119,7 @@ export const Sidebar: React.FC<Sidebarprops> = ({
             />
             <Flex alignY="center" gap="1">
               <AnimationOfDay width="50px" state={state} />
-              <Text color="primary" size="samll">
-                {state}
-              </Text>
+              <Text color="primary">{state}</Text>
             </Flex>
             <Flex alignY="center" gap="1">
               <Gif
@@ -130,9 +128,7 @@ export const Sidebar: React.FC<Sidebarprops> = ({
                 width="50px"
                 height="50px"
               />
-              <Text color="primary" size="samll">
-                Rain - {chanceOfRain}%
-              </Text>
+              <Text color="primary">Rain - {chanceOfRain}%</Text>
             </Flex>
             <ImageEl location="Berlin, Germany" size="big" image={spaceSquad} />
           </Flex>

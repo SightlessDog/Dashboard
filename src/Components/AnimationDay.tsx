@@ -17,8 +17,8 @@ import sunStill from "../Design/assets/images/sun.png";
 
 export const AnimationOfDay: React.FC<{
   state: string;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
 }> = ({ state, width, height }) => {
   return (
     <>

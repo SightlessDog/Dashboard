@@ -16,17 +16,14 @@ export const stitches = createStitches({
       primaryFont: primaryFont,
     },
   },
-  media: {
-    bp1: "(min-width: 1024px)",
-  },
 });
 
 export const darkTheme = createTheme("dark", {
   colors: {
-    primaryColor: black[200],
+    primaryColor: black[300],
     secondaryColor: black[100],
-    primaryTextColor: neutral[100],
-    secondaryTextColor: neutral[200],
+    primaryTextColor: neutral[200],
+    secondaryTextColor: neutral[300],
     dividerColor: neutral[100],
     indicatorColor: blue[200],
   },

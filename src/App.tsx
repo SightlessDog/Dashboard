@@ -23,7 +23,7 @@ export const Context = createContext<Context>({
   setTheme: () => {},
   unit: "C",
   setUnit: () => {},
-  page: "today",
+  page: "week",
   setPage: () => {},
 });
 interface ThemeMap {
@@ -46,10 +46,6 @@ function App() {
     space_squad_long,
     "7"
   );
-
-  Object.keys(weatherData).length
-    ? console.log(Object.keys(weatherData).length)
-    : null;
 
   return (
     <Context.Provider value={{ theme, setTheme, unit, setUnit, page, setPage }}>
@@ -117,8 +113,6 @@ function App() {
               </Routes>
             </>
           ) : null}
-
-          {/* <NormalWidget /> */}
         </Grid>
       </BrowserRouter>
     </Context.Provider>

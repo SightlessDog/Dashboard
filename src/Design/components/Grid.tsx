@@ -6,16 +6,6 @@ export const Grid = styled("div", {
   gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
   gridTemplateRows: "repeat(auto-fit, minmax(140px, 1fr))",
   variants: {
-    columns: {
-      2: {
-        gridTemplateColumns: "1fr 4fr",
-      },
-    },
-    rows: {
-      2: {
-        gridTemplateRows: "1fr 1fr",
-      },
-    },
     size: {
       big: {
         gridTemplateColumns: "repeat(auto-fit, minmax(10%, 2fr))",

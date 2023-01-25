@@ -4,6 +4,7 @@ import { SearchIcon } from "../assets/icons/SearchIcon";
 import { Flex } from "./Flex";
 import { TargetIcon } from "../assets/icons/TargetIcon";
 import { Box } from "./Box";
+import { black, neutral } from "../utils";
 
 interface InputProps {
   label?: string;
@@ -21,16 +22,16 @@ interface InputProps {
 const InputElement = styled("input", {
   borderRadius: "5px",
   border: "none",
-  backgroundColor: "$primaryColor",
+  backgroundColor: `${neutral[100]}`,
   "&::placeholder": {
-    color: "$primaryTextColor",
+    color: `${black[200]}`,
   },
   "&:hover": {
-    backgroundColor: "$secondaryColor",
+    backgroundColor: `${neutral[200]}`,
   },
   "&:focus": {
     outline: "none",
-    backgroundColor: "$secondaryColor",
+    backgroundColor: `${neutral[200]}`,
   },
   transition: "background-color 300ms linear",
 });
@@ -116,7 +117,7 @@ export const Input: React.FC<InputProps> = ({
           >
             <Flex
               css={{ width: "100%", height: "100%", borderRadius: "100%" }}
-              color="secondary"
+              color="$primary"
               alignX="center"
               alignY="center"
             >
