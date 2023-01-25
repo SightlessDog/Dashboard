@@ -9,20 +9,10 @@ interface Props {
   days?: string;
 }
 
-function useWeather(
-  lat: Props["lat"],
-  long: Props["long"],
-  days?: Props["days"]
-): [State, (newState: State) => void] {
+function useQuote(): [State, (newState: State) => void] {
   const [state, setState] = useState<State>({});
 
-  const url = days
-    ? `${import.meta.env.VITE_API_URL}/forecast.json?key=${
-        import.meta.env.VITE_API_KEY
-      }&q= ${lat} ${long}&days=${days}&aqi=yes`
-    : `${import.meta.env.VITE_API_URL}/current.json?key=${
-        import.meta.env.VITE_API_KEY
-      }&q= ${lat} ${long}&aqi=yes`;
+  const url = `${import.meta.env.VITE_CITATION_API_URL}`;
 
   useEffect(() => {
     async function fetchData() {
@@ -31,15 +21,16 @@ function useWeather(
           .then((res) => res.json())
           .then((result) => {
             setState(result);
+            console.log(result);
           });
       } catch (error) {
         console.log(error);
       }
     }
     fetchData();
-  }, [lat, long, days]);
+  }, []);
 
   return [state, setState];
 }
 
-export default useWeather;
+export default useQuote;

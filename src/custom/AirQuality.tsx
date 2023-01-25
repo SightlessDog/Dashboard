@@ -20,7 +20,7 @@ export const Air: React.FC<{ airQuality: number }> = ({ airQuality }) => {
         <Text size="big" color="primary">
           {airQuality.toFixed()}
         </Text>
-        <ProgressIndicator progress={airQuality / 5} />
+        <ProgressIndicator progress={airQuality / 8} />
       </Flex>
     </Box>
   );

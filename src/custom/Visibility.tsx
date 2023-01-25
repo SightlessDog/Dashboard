@@ -13,9 +13,9 @@ const Box = styled(Flex, {
 
 export const Visibility = ({ visibility }) => {
   return (
-    <Box alignX="start">
+    <Box alignX="between">
       <Text color="secondary">Visibility</Text>
-      <Text>{visibility} km</Text>
+      <Text color="primary">{visibility} km</Text>
     </Box>
   );
 };

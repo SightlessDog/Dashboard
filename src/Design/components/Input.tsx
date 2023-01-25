@@ -70,10 +70,10 @@ export const Input: React.FC<InputProps> = ({
   }`;
 
   return (
-    <div>
+    <div style={{ width: "80%" }}>
       <label>{label}</label>
-      <Flex alignY="center" gap="1">
-        <Flex css={{ position: "relative" }}>
+      <Flex alignY="center" gap="2">
+        <Flex css={{ position: "relative" }} style={{ width: "100%" }}>
           <Flex
             css={{
               position: "absolute",
@@ -95,7 +95,7 @@ export const Input: React.FC<InputProps> = ({
             pattern={pattern}
             required={required}
             css={{
-              width: "150px",
+              width: "100%",
               height: "40px",
               paddingLeft: "1.5rem",
               paddingRight: "4rem",

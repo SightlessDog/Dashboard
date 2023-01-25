@@ -25,12 +25,12 @@ export const WindStatus = ({ windKph, direction }) => {
   return (
     <Box alignX="between">
       <Text color="secondary">Wind Status</Text>
-      <Text color="primary" size="big" css={{ fontWeight: "bold" }}>
+      <Text color="primary" css={{ fontWeight: "bold" }}>
         {windKph} km/h
       </Text>
       <Flex alignY="center" gap="1">
         <Container alignX="center" alignY="center">
-          <CompassArrowIcon width="15px" height="15px" direction={direction} />
+          <CompassArrowIcon width="50px" height="50px" direction={direction} />
         </Container>
         <Text color="primary" size="big">
           {direction}

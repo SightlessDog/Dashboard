@@ -15,28 +15,47 @@ import snowStill from "../Design/assets/images/snow.png";
 import sun from "../Design/assets/animations/sun.gif";
 import sunStill from "../Design/assets/images/sun.png";
 
-export const AnimationOfDay: React.FC<{ state: string }> = ({ state }) => {
+export const AnimationOfDay: React.FC<{
+  state: string;
+  width: string;
+  height: string;
+}> = ({ state, width, height }) => {
   return (
     <>
       {state == "Patchy moderate snow" ? (
-        <Gif still={snowStill} animated={snow} width="50px" height="50px" />
+        <Gif still={snowStill} animated={snow} width={width} height={height} />
       ) : state == "Moderate rain" ? (
-        <Gif still={rainStill} animated={rain} width="50px" height="50px" />
+        <Gif still={rainStill} animated={rain} width={width} height={height} />
       ) : state == "Partly cloudy" ? (
-        <Gif still={cloudyStill} animated={cloudy} width="50px" height="50px" />
+        <Gif
+          still={cloudyStill}
+          animated={cloudy}
+          width={width}
+          height={height}
+        />
       ) : state == "Cloudy" ? (
-        <Gif still={cloudsStill} animated={clouds} width="50px" height="50px" />
+        <Gif
+          still={cloudsStill}
+          animated={clouds}
+          width={width}
+          height={height}
+        />
       ) : state == "Sunny" ? (
-        <Gif still={sunStill} animated={sun} width="50px" height="50px" />
+        <Gif still={sunStill} animated={sun} width={width} height={height} />
       ) : state == "Patchy rain possible" ? (
         <Gif
           still={drizzleStill}
           animated={drizzle}
-          width="50px"
-          height="50px"
+          width={width}
+          height={height}
         />
       ) : (
-        <Gif still={puddleStill} animated={puddle} width="50px" height="50px" />
+        <Gif
+          still={puddleStill}
+          animated={puddle}
+          width={width}
+          height={height}
+        />
       )}
     </>
   );

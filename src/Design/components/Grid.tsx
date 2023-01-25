@@ -10,45 +10,15 @@ export const Grid = styled("div", {
       2: {
         gridTemplateColumns: "1fr 4fr",
       },
-      3: {
-        gridTemplateColumns: "repeat(3, 1fr)",
-      },
-      4: {
-        gridTemplateColumns: "repeat(4, 1fr)",
-      },
-      5: {
-        gridTemplateColumns: "repeat(5, 1fr)",
-      },
-      6: {
-        gridTemplateColumns: "repeat(6, 1fr)",
-      },
-      7: {
-        gridTemplateColumns: "repeat(7, 1fr)",
-      },
     },
     rows: {
       2: {
         gridTemplateRows: "1fr 1fr",
       },
-      3: {
-        gridTemplateRows: "repeat(3, 1fr)",
-      },
-      4: {
-        gridTemplateRows: "repeat(4, 1fr)",
-      },
-      5: {
-        gridTemplateRows: "repeat(5, 1fr)",
-      },
-      6: {
-        gridTemplateRows: "repeat(6, 1fr)",
-      },
-      7: {
-        gridTemplateRows: "repeat(7, 1fr)",
-      },
     },
     size: {
       big: {
-        gridTemplateColumns: "repeat(auto-fit, minmax(30%, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(10%, 2fr))",
         gridTemplateRows: "repeat(auto-fit, minmax(50%, 1fr))",
       },
     },

@@ -9,6 +9,9 @@ interface WidgetProps {
   width?: string;
   maxTemp: string;
   minTemp: string;
+  maxTempF: string;
+  minTempF: string;
+  unit: string;
   state: string;
   day: Date;
 }
@@ -24,6 +27,9 @@ export const Widget: React.FC<WidgetProps> = ({
   width,
   maxTemp,
   minTemp,
+  maxTempF,
+  minTempF,
+  unit,
   state,
   day,
 }) => {
@@ -36,10 +42,10 @@ export const Widget: React.FC<WidgetProps> = ({
       css={{ width: width }}
     >
       <Text>{getTheDay(new Date(day).getDay())}</Text>
-      <AnimationOfDay state={state} />
+      <AnimationOfDay width="50px" height="50px" state={state} />
       <Flex direction="row" gap="1">
-        <Text>{maxTemp}°</Text>
-        <Text color="secondary">{minTemp}°</Text>
+        <Text>{unit == "C" ? maxTemp : maxTempF}°</Text>
+        <Text color="secondary">{unit == "C" ? minTemp : minTempF}°</Text>
       </Flex>
     </WidgetBox>
   );

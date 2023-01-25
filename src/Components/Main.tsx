@@ -2,7 +2,7 @@ import * as React from "react";
 import { Box } from "../Design/components/Box";
 import { Text } from "../Design/components/Text";
 import { Flex } from "../Design/components/Flex";
-import { Link } from "../Design/components/Link";
+import { CustomLink, Link } from "../Design/components/Link";
 import { Button } from "../Design/components/Button";
 import { Grid } from "../Design/components/Grid";
 import { Widget } from "../Design/components/Widget";
@@ -12,10 +12,15 @@ import { Sunrise } from "../custom/Sunrise";
 import { Humidity } from "../custom/Humidity";
 import { Visibility } from "../custom/Visibility";
 import { Air } from "../custom/AirQuality";
+import { Context } from "../App";
+import spaceSquadbg from "../Design/assets/images/bg.jpg";
+import spaceSquadbgNighty from "../Design/assets/images/nightybg.jpg";
+import astro from "../Design/assets/images/astro.png";
+import useQuote from "../hooks/useQuote";
+import { Citation } from "./CitationElement";
+import { Nav } from "./Nav";
 
 export const Main = ({
-  theme,
-  setTheme,
   forecastData,
   windKph,
   windDirection,
@@ -23,65 +28,86 @@ export const Main = ({
   visibility,
   humidity,
 }) => {
+  const [quote, setQuote] = useQuote();
   return (
-    <Box color="secondary" css={{ padding: "2% 4%" }}>
-      <Flex alignX="between" alignY="end" css={{ width: "100%" }}>
-        <Flex gap="2">
-          <Link label="Today" to="/Today" active={false} />
-          <Link label="Week" to="/Week" active={true} />
-        </Flex>
-        <Flex gap="1" alignY="end">
-          <Button
-            shape="rounded"
-            onClick={() =>
-              theme === "light" ? setTheme("dark") : setTheme("light")
-            }
-            css={{ height: "40px", width: "40px" }}
-          >
-            Dark
-          </Button>
-          <Button shape="rounded" css={{ height: "30px", width: "30px" }}>
-            <Text css={{ fontWeight: "bold" }}>°C</Text>
-          </Button>
-          <Button shape="rounded" css={{ height: "30px", width: "30px" }}>
-            <Text css={{ fontWeight: "bold" }}>°C</Text>
-          </Button>
-          <Button shape="squared">Profile pic</Button>
-        </Flex>
-      </Flex>
-      <Flex direction="column" gap="3">
-        <Grid
-          css={{ width: "100%", marginTop: "100px", justifyItems: "center" }}
-          alignX="center"
-          alignY="center"
-          gap="2"
+    <Context.Consumer>
+      {({ theme, setTheme, unit, setUnit }) => (
+        <Box
+          color="secondary"
+          css={{
+            padding: "0% 4% 0% 4%",
+            height: "100%",
+            backgroundImage: `url(${
+              theme == "dark" ? spaceSquadbgNighty : spaceSquadbg
+            })`,
+            backgroundSize: "cover",
+          }}
         >
-          {forecastData.map((data, i) => (
-            <Widget
-              key={i}
-              day={data.date}
-              minTemp={data.day.mintemp_c}
-              maxTemp={data.day.maxtemp_c}
-              state={data.day.condition.text}
-              width="100px"
-            />
-          ))}
-        </Grid>
-        <Text color="primary" css={{ fontWeight: "bold" }} size="big">
-          Today's Highlights
-        </Text>
-        <Grid gap="1" size="big">
-          <UVIndex index={forecastData[0].day.uv} />
-          <WindStatus windKph={windKph} direction={windDirection} />
-          <Sunrise
-            sunrise={forecastData[0].astro.sunrise}
-            sunset={forecastData[0].astro.sunset}
+          <Box
+            css={{
+              position: "absolute",
+              backgroundImage: `url(${astro})`,
+              backgroundSize: "cover",
+              width: "300px",
+              height: "300px",
+              left: "0%",
+              top: "35%",
+              zIndex: "0",
+              "@media (min-width: 1024px)": {
+                transform: "translateY(-100%)",
+                top: "100%",
+              },
+            }}
           />
-          <Humidity humidity={humidity} />
-          <Visibility visibility={visibility} />
-          <Air airQuality={airQuality} />
-        </Grid>
-      </Flex>
-    </Box>
+          <Nav />
+          <Flex direction="column" gap="3" css={{ position: "relative" }}>
+            <Box css={{ marginTop: "100px" }}>
+              {Object.keys(quote).length > 0 ? (
+                <Citation citation={quote.contents.quotes[0]} />
+              ) : null}
+            </Box>
+            <Text color="primary" css={{ fontWeight: "bold" }} size="big">
+              Week's Forecast
+            </Text>
+            <Grid
+              css={{
+                justifyItems: "center",
+              }}
+              alignX="center"
+              alignY="center"
+              gap="2"
+            >
+              {forecastData.map((data, i) => (
+                <Widget
+                  key={i}
+                  day={data.date}
+                  minTemp={data.day.mintemp_c}
+                  maxTemp={data.day.maxtemp_c}
+                  minTempF={data.day.mintemp_f}
+                  maxTempF={data.day.maxtemp_f}
+                  state={data.day.condition.text}
+                  unit={unit}
+                  width="100px"
+                />
+              ))}
+            </Grid>
+            <Text color="primary" css={{ fontWeight: "bold" }} size="big">
+              Today's Highlights
+            </Text>
+            <Grid gap="1">
+              <UVIndex index={forecastData[0].day.uv} />
+              <WindStatus windKph={windKph} direction={windDirection} />
+              <Sunrise
+                sunrise={forecastData[0].astro.sunrise}
+                sunset={forecastData[0].astro.sunset}
+              />
+              <Humidity humidity={humidity} />
+              <Visibility visibility={visibility} />
+              <Air airQuality={airQuality} />
+            </Grid>
+          </Flex>
+        </Box>
+      )}
+    </Context.Consumer>
   );
 };

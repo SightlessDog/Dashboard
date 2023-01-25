@@ -1,7 +1,8 @@
 import { styled } from "@stitches/react";
 import * as React from "react";
+import { Link } from "react-router-dom";
 
-const StyledLink = styled("a", {
+const StyledLink = styled(Link, {
   backgroundColor: "none",
   color: "$secondaryTextColor",
   fontWeight: "bold",
@@ -22,13 +23,14 @@ const StyledLink = styled("a", {
   },
 });
 
-export const Link: React.FC<{ label: string; to: string; active: boolean }> = ({
-  label,
-  to,
-  active,
-}) => {
+export const CustomLink: React.FC<{
+  label: string;
+  to: string;
+  active: boolean;
+  onClick?: any;
+}> = ({ label, to, active, onClick }) => {
   return (
-    <StyledLink active={active} href={to}>
+    <StyledLink active={active} to={to} onClick={onClick}>
       {label}
     </StyledLink>
   );
