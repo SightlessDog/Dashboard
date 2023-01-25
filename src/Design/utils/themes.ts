@@ -16,13 +16,8 @@ export const stitches = createStitches({
       primaryFont: primaryFont,
     },
   },
-  utils: {
-    width: (value: string) => ({
-      width: value,
-    }),
-    height: (value: string) => ({
-      height: value,
-    }),
+  media: {
+    bp1: "(min-width: 1024px)",
   },
 });
 

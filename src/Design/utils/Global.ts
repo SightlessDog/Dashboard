@@ -5,6 +5,7 @@ export const GlobalStyle = globalCss({
   html: {
     boxSizing: "border-box",
     fontSize: "16px",
+    height: "100%",
   },
   "* *:before *:after": {
     boxSizing: "inherit",
@@ -15,7 +16,7 @@ export const GlobalStyle = globalCss({
     fontFamily: `${primaryFont}`,
   },
   main: {
-    width: "90%",
-    margin: "0 auto",
+    width: "100%",
+    margin: "0 0",
   },
 });
