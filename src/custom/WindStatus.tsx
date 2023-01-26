@@ -32,7 +32,15 @@ export const WindStatus = ({ windKph, direction }) => {
         <Container alignX="center" alignY="center">
           <CompassArrowIcon width="50px" height="50px" direction={direction} />
         </Container>
-        <Text color="primary" size="big">
+        <Text
+          color="primary"
+          size="small"
+          css={{
+            fontFamily: "$secondaryFont",
+            fontWeight: "bold",
+            lineHeight: "1.75em",
+          }}
+        >
           {direction}
         </Text>
       </Flex>

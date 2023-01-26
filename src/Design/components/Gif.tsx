@@ -5,8 +5,8 @@ interface GifProps {
   animated: string;
   width?: string;
   height?: string;
-  playSound: any;
-  stop: any;
+  playSound?: any;
+  stop?: any;
 }
 
 const Gif: React.FC<GifProps> = ({
@@ -23,13 +23,13 @@ const Gif: React.FC<GifProps> = ({
   function handleMouseEnter() {
     imgRef.current!.src = animated;
     setIsHovering(true);
-    playSound();
+    if (playSound) playSound();
   }
 
   function handleMouseLeave() {
     imgRef.current!.src = still;
     setIsHovering(false);
-    stop();
+    if (stop) stop();
   }
 
   return (

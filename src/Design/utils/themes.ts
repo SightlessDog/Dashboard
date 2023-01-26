@@ -1,6 +1,6 @@
 import { createStitches, createTheme } from "@stitches/react";
 import { black, blue, neutral } from "./colors";
-import { primaryFont } from "./typography";
+import { primaryFont, secondaryFont } from "./typography";
 
 export const stitches = createStitches({
   theme: {
@@ -14,6 +14,7 @@ export const stitches = createStitches({
     },
     fonts: {
       primaryFont: primaryFont,
+      secondaryFont: secondaryFont,
     },
   },
 });
@@ -29,5 +30,6 @@ export const darkTheme = createTheme("dark", {
   },
   fonts: {
     primaryFont: primaryFont,
+    secondaryFont: secondaryFont,
   },
 });

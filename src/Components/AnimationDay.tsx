@@ -15,6 +15,7 @@ import snowStill from "../Design/assets/images/snow.png";
 import sun from "../Design/assets/animations/sun.gif";
 import sunStill from "../Design/assets/images/sun.png";
 import birds from "../Design/assets/sound/birds.wav";
+
 import useSound from "use-sound";
 
 export const AnimationOfDay: React.FC<{

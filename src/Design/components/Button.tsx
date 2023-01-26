@@ -9,6 +9,7 @@ export const Button = styled("button", {
   justifyContent: "center",
   "&:hover": {
     backgroundColor: "$secondaryColor",
+    cursor: "pointer",
   },
   variants: {
     shape: {

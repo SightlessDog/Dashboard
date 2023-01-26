@@ -16,7 +16,12 @@ export const Citation = ({ citation }) => {
       <Text color={"primary"} size="big" css={{ fontWeight: "bold" }}>
         Quote of the day
       </Text>
-      <Text color={"primary"}>{citation.quote}</Text>
+      <Text
+        color={"primary"}
+        css={{ fontFamily: "$secondaryFont", lineHeight: "1.75em" }}
+      >
+        {citation.quote}
+      </Text>
       <Text color={"secondary"}>- {citation.author}</Text>
     </Container>
   );

@@ -47,7 +47,7 @@ export const Main = ({
         >
           <Box
             css={{
-              position: "absolute",
+              position: "fixed",
               backgroundImage: `url(${astro})`,
               backgroundSize: "cover",
               width: "300px",
