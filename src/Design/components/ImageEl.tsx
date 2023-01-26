@@ -26,6 +26,7 @@ const LocationText = styled(Text, {
   left: "50%",
   fontWeight: "bold",
   color: "white",
+  whiteSpace: "nowrap",
 });
 
 export const ImageEl = ({ location, image, size }) => {

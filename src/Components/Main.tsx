@@ -18,6 +18,8 @@ import useQuote from "../hooks/useQuote";
 import { Citation } from "./CitationElement";
 import { Nav } from "./Nav";
 import useSound from "use-sound";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import { useNavigate } from "react-router-dom";
 
 export const Main = ({
   forecastData,
