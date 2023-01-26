@@ -17,6 +17,7 @@ import astro from "../Design/assets/images/astro.png";
 import useQuote from "../hooks/useQuote";
 import { Citation } from "./CitationElement";
 import { Nav } from "./Nav";
+import useSound from "use-sound";
 
 export const Main = ({
   forecastData,
@@ -27,6 +28,7 @@ export const Main = ({
   humidity,
 }) => {
   const [quote, setQuote] = useQuote();
+
   return (
     <Context.Consumer>
       {({ theme, setTheme, unit, setUnit }) => (

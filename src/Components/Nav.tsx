@@ -7,8 +7,13 @@ import { Text } from "../Design/components/Text";
 import { ImageEl } from "../Design/components/ImageEl";
 import { Context } from "../App";
 import spaceSquad from "../Design/assets/images/spacesquad.jpg";
+import click from "../Design/assets/sound/click.wav";
+import useSound from "use-sound";
 
 export const Nav = () => {
+  const [playClick] = useSound(click, {
+    volume: 0.25,
+  });
   return (
     <Context.Consumer>
       {({ theme, setTheme, unit, setUnit, page, setPage }) => (
@@ -55,6 +60,7 @@ export const Nav = () => {
               activeThumbColor="#e2e8f0"
               onChange={(mode) => {
                 theme === "light" ? setTheme("dark") : setTheme("light");
+                playClick();
               }}
             />
             <Button
