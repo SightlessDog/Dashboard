@@ -5,20 +5,31 @@ interface GifProps {
   animated: string;
   width?: string;
   height?: string;
+  playSound: any;
+  stop: any;
 }
 
-const Gif: React.FC<GifProps> = ({ still, animated, width, height }) => {
+const Gif: React.FC<GifProps> = ({
+  still,
+  animated,
+  width,
+  height,
+  playSound,
+  stop,
+}) => {
   const [isHovering, setIsHovering] = useState<boolean>(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   function handleMouseEnter() {
     imgRef.current!.src = animated;
     setIsHovering(true);
+    playSound();
   }
 
   function handleMouseLeave() {
     imgRef.current!.src = still;
     setIsHovering(false);
+    stop();
   }
 
   return (
